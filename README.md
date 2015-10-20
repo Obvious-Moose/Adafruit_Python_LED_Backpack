@@ -31,3 +31,6 @@ Adafruit invests time and resources providing this open source code, please supp
 Written by Tony DiCola for Adafruit Industries.
 
 MIT license, all text above must be included in any redistribution
+
+
+Uhh.... using this as a starting point for a raspberry pi based beer thermometer.  Using 14 segment alphanum LEDS to display temperature.
