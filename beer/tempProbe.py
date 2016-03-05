@@ -38,6 +38,6 @@ class tempProbe:
 	    equals_pos = lines[1].find('t=')
 	    if equals_pos != -1:
 	        temp_string = lines[1][equals_pos+2:]
-	        temp_f = float(temp_string) * 9000 / 5000 + 32000
+	        temp_f = float(temp_string) * 9 / 5000 + 32
 	        return temp_f
     
