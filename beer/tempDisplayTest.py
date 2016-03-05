@@ -33,13 +33,13 @@ while True:
   #I doubt this is a good way to do it or whether it even works.  who cares.
   if tempF >= 100:
     display.clear()
-    display.print_number_str(tempstr[0:4])
+    display.print_number_str(tempstr[0:5])
   elif tempF <= 10:
     display.clear()
-    display.print_number_str("  " + tempstr[0:2])
+    display.print_number_str(tempstr[0:3])
   else:
     display.clear()
-    display.print_number_str(" " + tempstr[0:3])
+    display.print_number_str(tempstr[0:4])
   display.write_display()
   
   #This part actually controls the temperature?  It SHOULD flip the relay and turn the cooler on if the beer temp
