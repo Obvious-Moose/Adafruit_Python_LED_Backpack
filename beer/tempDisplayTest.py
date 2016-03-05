@@ -22,12 +22,12 @@ display.begin()
 
 #Variables I might use below
 tempF = 0
-tempstr = "" + tempF
+tempstr = "" + str(tempF)
 
 while True:
   #Get the temperature
   tempF = probe.read_tempF()
-  tempstr = "" + tempF
+  tempstr = "" + str(tempF)
   
   #This parts prints the temp in degrees F on the stupid LED thing.  Wrote this way so it's right-aligned?
   #I doubt this is a good way to do it or whether it even works.  who cares.
