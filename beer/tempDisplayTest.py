@@ -8,7 +8,7 @@ import tempProbe
 #GPIO.setmode(GPIO.BCM)
 
 #Create an instance of the 14-segment LED Backpack thing, and also the temperature probe dealie
-display = Alphanum4.ALphaNum4()
+display = AlphaNum4.AlphaNum4()
 probe = tempProbe.tempProbe()
 
 #Have to run the display thing once, and also going to clean up the GPIO crap.  Makes sure it's set to off initially.
