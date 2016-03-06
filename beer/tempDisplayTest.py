@@ -26,7 +26,7 @@ tempF = 0
 tempstr = "" + str(tempF)
 lowTrigger = 0
 highTrigger = 100
-regBool
+regBool = 0
 
 #Need to ask the user what temps to use
 regulation = input("Regulate temperature?  y/n: ")
