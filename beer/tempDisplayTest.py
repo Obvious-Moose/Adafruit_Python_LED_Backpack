@@ -32,12 +32,12 @@ regBool
 regulation = input("Regulate temperature?  y/n: ")
 if regulation == "Y":
   regBool = 1
-  elif regulation == "y":
-    regBool = 1
-    else:
-      regBool = 0
-      GPIO.output(18, GPIO.HIGH)
-      GPIO.output(23, GPIO.HIGH)
+elif regulation == "y":
+  regBool = 1
+else:
+  regBool = 0
+  GPIO.output(18, GPIO.HIGH)
+  GPIO.output(23, GPIO.HIGH)
 
 if regBool == 1
   lowTrigger = input("Select a lower temperature trigger: ")
