@@ -39,7 +39,7 @@ else:
   GPIO.output(18, GPIO.HIGH)
   GPIO.output(23, GPIO.HIGH)
 
-if regBool == 1
+if regBool == 1:
   lowTrigger = input("Select a lower temperature trigger: ")
   highTrigger = input("Select an upper temperature trigger: ")
 
