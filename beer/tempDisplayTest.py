@@ -18,8 +18,8 @@ display.begin()
 GPIO.cleanup()
 GPIO.setup(18, GPIO.OUT)
 GPIO.setup(23, GPIO.OUT)
-GPIO.output(18, GPIO.LOW)
-GPIO.output(23, GPIO.LOW)
+GPIO.output(18, GPIO.HIGH)
+GPIO.output(23, GPIO.HIGH)
 
 #Variables I might use below
 tempF = 0
@@ -46,12 +46,12 @@ while True:
   #This part actually controls the temperature?  It SHOULD flip the relay and turn the cooler on if the beer temp
   #   gets above 74.  Again, I doubt this even works who cares.
   if tempF > 85:
-    GPIO.output(18, GPIO.HIGH)
-  elif tempF > 60:
     GPIO.output(18, GPIO.LOW)
-    GPIO.output(23, GPIO.LOW)
-  elif tempF < 60:
+  elif tempF > 60:
+    GPIO.output(18, GPIO.HIGH)
     GPIO.output(23, GPIO.HIGH)
+  elif tempF < 60:
+    GPIO.output(23, GPIO.LOW)
   
   #Ideally, I'd want to set this to check multiple times.  One reading of 74 could be a fluke (especially given
   #how shitty the probe was when i tested it.)  I'd want it to stay off until it gets 6-10 readings above 74. 
