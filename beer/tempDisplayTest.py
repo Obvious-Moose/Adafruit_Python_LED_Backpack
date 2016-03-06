@@ -25,6 +25,10 @@ GPIO.output(23, GPIO.HIGH)
 tempF = 0
 tempstr = "" + str(tempF)
 
+#Need to ask the user what temps to use
+lowTrigger = input("Select a lower temperature trigger: ")
+highTrigger = input("Select an upper temperature trigger: ")
+
 while True:
   #Get the temperature
   tempF = probe.read_tempF()
@@ -45,12 +49,12 @@ while True:
   
   #This part actually controls the temperature?  It SHOULD flip the relay and turn the cooler on if the beer temp
   #   gets above 74.  Again, I doubt this even works who cares.
-  if tempF > 85:
+  if tempF > highTrigger:
     GPIO.output(18, GPIO.LOW)
-  elif tempF > 60:
+  elif tempF > lowTrigger:
     GPIO.output(18, GPIO.HIGH)
     GPIO.output(23, GPIO.HIGH)
-  elif tempF < 60:
+  elif tempF < lowTrigger:
     GPIO.output(23, GPIO.LOW)
   
   #Ideally, I'd want to set this to check multiple times.  One reading of 74 could be a fluke (especially given
