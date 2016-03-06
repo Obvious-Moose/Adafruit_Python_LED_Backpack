@@ -24,10 +24,24 @@ GPIO.output(23, GPIO.HIGH)
 #Variables I might use below
 tempF = 0
 tempstr = "" + str(tempF)
+lowTrigger = 0
+highTrigger = 100
+regBool
 
 #Need to ask the user what temps to use
-lowTrigger = input("Select a lower temperature trigger: ")
-highTrigger = input("Select an upper temperature trigger: ")
+regulation = input("Regulate temperature?  y/n: ")
+if regulation == "Y":
+  regBool = 1
+  elif regulation == "y":
+    regBool = 1
+    else:
+      regBool = 0
+      GPIO.output(18, GPIO.HIGH)
+      GPIO.output(23, GPIO.HIGH)
+
+if regBool == 1
+  lowTrigger = input("Select a lower temperature trigger: ")
+  highTrigger = input("Select an upper temperature trigger: ")
 
 while True:
   #Get the temperature
@@ -49,13 +63,14 @@ while True:
   
   #This part actually controls the temperature?  It SHOULD flip the relay and turn the cooler on if the beer temp
   #   gets above 74.  Again, I doubt this even works who cares.
-  if tempF > highTrigger:
-    GPIO.output(18, GPIO.LOW)
-  elif tempF > lowTrigger:
-    GPIO.output(18, GPIO.HIGH)
-    GPIO.output(23, GPIO.HIGH)
-  elif tempF < lowTrigger:
-    GPIO.output(23, GPIO.LOW)
+  if regBool == 1:
+    if tempF > highTrigger:
+      GPIO.output(18, GPIO.LOW)
+    elif tempF > lowTrigger:
+      GPIO.output(18, GPIO.HIGH)
+      GPIO.output(23, GPIO.HIGH)
+    elif tempF < lowTrigger:
+      GPIO.output(23, GPIO.LOW)
   
   #Ideally, I'd want to set this to check multiple times.  One reading of 74 could be a fluke (especially given
   #how shitty the probe was when i tested it.)  I'd want it to stay off until it gets 6-10 readings above 74. 
