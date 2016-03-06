@@ -47,7 +47,7 @@ while True:
   #   gets above 74.  Again, I doubt this even works who cares.
   if tempF > 85:
     GPIO.output(18, GPIO.HIGH)
-  elif tempF < 85 & tempF > 60:
+  elif tempF > 60:
     GPIO.output(18, GPIO.LOW)
     GPIO.output(23, GPIO.LOW)
   elif tempF < 60:
