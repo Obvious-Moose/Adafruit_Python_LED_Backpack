@@ -29,7 +29,7 @@ highTrigger = 100
 regBool = 0
 
 #Need to ask the user what temps to use
-regulation = input("Regulate temperature?  y/n: ")
+regulation = raw_input("Regulate temperature?  y/n: ")
 if regulation == "Y":
   regBool = 1
 elif regulation == "y":
